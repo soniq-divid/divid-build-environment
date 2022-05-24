@@ -27,4 +27,4 @@ ExternalProject_Add(DividEngine
                    -DCMAKE_PREFIX_PATH=${CMAKE_INSTALL_PREFIX}
                    -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
                    -DCURA_ENGINE_VERSION=${CURA_ENGINE_VERSION})
-add_dependencies(CuraEngine Arcus)
+add_dependencies(DividEngine Arcus)
