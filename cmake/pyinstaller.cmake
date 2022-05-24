@@ -55,7 +55,7 @@ add_custom_command(
             ${installer_DIR}
         COMMAND
             ${CMAKE_COMMAND} -E env "PYTHONPATH=${PYTHONPATH}" ${pyinstaller_EXECUTABLE} ${cura_EXECUTABLE}
-                --collect-all cura
+                --collect-all divid
                 --collect-all UM
                 --collect-all serial #Used only in plug-ins.
                 --collect-all Charon
@@ -67,7 +67,7 @@ add_custom_command(
                 --collect-all sqlite3
                 --hidden-import zeroconf
                 --collect-all trimesh
-                --add-binary "${curaengine_EXECUTABLE}${env_path_sep}."
+                --add-binary "${dividengine_EXECUTABLE}${env_path_sep}."
                 --add-data "${CMAKE_INSTALL_PREFIX}/${lib_path}/cura/plugins${env_path_sep}share/cura/plugins"
                 --add-data "${CMAKE_INSTALL_PREFIX}/${lib_path}/uranium/plugins${env_path_sep}share/uranium/plugins"
                 --add-data "${CMAKE_INSTALL_PREFIX}/share/cura/resources${env_path_sep}share/cura/resources"
@@ -78,4 +78,4 @@ add_custom_command(
         COMMAND
             ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/packaging/Cura.ico ${ULTIMAKER_CURA_PATH}/
 )
-add_dependencies(pyinstaller create_installer_dir Cura fdm_materials cura-binary-data)
+add_dependencies(pyinstaller create_installer_dir Divid fdm_materials divid-binary-data)

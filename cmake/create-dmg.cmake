@@ -41,4 +41,4 @@ add_custom_command(
             --rez ${REZ_EXECUTABLE}
             ${DMG_PATH}
             ${ULTIMAKER_CURA_APP_PATH})
-add_dependencies(packaging pyinstaller install-python-requirements Cura create_installer_dir)
+add_dependencies(packaging pyinstaller install-python-requirements Divid create_installer_dir)
