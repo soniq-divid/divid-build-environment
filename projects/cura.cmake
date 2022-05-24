@@ -4,7 +4,7 @@ GetFromEnvironmentOrCache(
         DEFAULT
             5.0
         DESCRIPTION
-            "The name of the tag or branch to build for Cura")
+            "The name of the tag or branch to build for Divid")
 
 GetFromEnvironmentOrCache(
         NAME
@@ -12,7 +12,7 @@ GetFromEnvironmentOrCache(
         DEFAULT
             OFF
         DESCRIPTION
-            "Enable crash handler and other debug options in Cura"
+            "Enable crash handler and other debug options in Divid"
         BOOL)
 GetFromEnvironmentOrCache(
         NAME
@@ -33,7 +33,7 @@ GetFromEnvironmentOrCache(
         NAME
             CURA_MARKETPLACE_ROOT
         DESCRIPTION
-            "The Cura Marketplace API root URL")
+            "The Divid Marketplace API root URL")
 GetFromEnvironmentOrCache(
         NAME
             URANIUM_SCRIPTS_DIR
@@ -48,10 +48,10 @@ GetFromEnvironmentOrCache(
         NAME
             CURA_BUILDTYPE
         DESCRIPTION
-            "Build type of Cura, eg. 'Enterprise'")
+            "Build type of Divid, eg. 'Enterprise'")
 
-ExternalProject_Add(Cura
-    GIT_REPOSITORY https://github.com/soniq-divid/Cura
+ExternalProject_Add(Divid
+    GIT_REPOSITORY https://github.com/soniq-divid/Divid
     GIT_TAG ${CURA_BRANCH_OR_TAG}
     GIT_SHALLOW 1
     STEP_TARGETS update

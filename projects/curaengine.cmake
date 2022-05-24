@@ -7,17 +7,17 @@ GetFromEnvironmentOrCache(
         DEFAULT
             5.0
         DESCRIPTION
-            "The name of the tag or branch to build for CuraEngine")
+            "The name of the tag or branch to build for DividEngine")
 GetFromEnvironmentOrCache(
         NAME
             CURA_ENGINE_VERSION
         DEFAULT
             ${CURA_VERSION}
         DESCRIPTION
-            "The version of CuraEngine")
+            "The version of DividEngine")
 
-ExternalProject_Add(CuraEngine
-        GIT_REPOSITORY https://github.com/soniq-divid/CuraEngine
+ExternalProject_Add(DividEngine
+        GIT_REPOSITORY https://github.com/soniq-divid/DividEngine
         GIT_TAG ${CURAENGINE_BRANCH_OR_TAG}
         GIT_SHALLOW 1
         STEP_TARGETS update
