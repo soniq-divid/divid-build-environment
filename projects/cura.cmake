@@ -2,7 +2,7 @@ GetFromEnvironmentOrCache(
         NAME
             CURA_BRANCH_OR_TAG
         DEFAULT
-            master
+            5.0
         DESCRIPTION
             "The name of the tag or branch to build for Cura")
 
@@ -51,7 +51,7 @@ GetFromEnvironmentOrCache(
             "Build type of Cura, eg. 'Enterprise'")
 
 ExternalProject_Add(Cura
-    GIT_REPOSITORY https://github.com/sqsoft-devops/Cura
+    GIT_REPOSITORY https://github.com/soniq-divid/Cura
     GIT_TAG ${CURA_BRANCH_OR_TAG}
     GIT_SHALLOW 1
     STEP_TARGETS update
