@@ -11,7 +11,7 @@ GetFromEnvironmentOrCache(
         DESCRIPTION
             "Specify the minimum version of the target platform (e.g. macOS or iOS)")
 
-project(cura-build-environment)
+project(divid-build-environment)
 cmake_minimum_required(VERSION 3.20)
 
 include(cmake/conan.cmake)
