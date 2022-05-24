@@ -19,4 +19,4 @@ ExternalProject_Add(divid-binary-data
                    -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
                    -DCMAKE_PREFIX_PATH=${CMAKE_INSTALL_PREFIX}
                    -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE})
-add_dependencies(divid-binary-data Cura Uranium)
+add_dependencies(divid-binary-data Divid Uranium)
