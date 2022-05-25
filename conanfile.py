@@ -58,10 +58,10 @@ class CuraBuildEnvironemtConan(ConanFile):
         tc.variables["CURA_VERSION_BUILD"] = "9"
 
         tc.variables["CURA_CLOUD_API_VERSION"] = "1"
-        tc.variables["CURA_CLOUD_API_ROOT"] = "https://api.ultimaker.com"
-        tc.variables["CURA_CLOUD_ACCOUNT_API_ROOT"] = "https://account.ultimaker.com"
-        tc.variables["CURA_MARKETPLACE_ROOT"] = "https://marketplace.ultimaker.com"
-        tc.variables["CURA_DIGITAL_FACTORY_URL"] = "https://digitalfactory.ultimaker.com"
+        tc.variables["CURA_CLOUD_API_ROOT"] = "https://zmorph3d.com/"
+        tc.variables["CURA_CLOUD_ACCOUNT_API_ROOT"] = "https://zmorph3d.com/"
+        tc.variables["CURA_MARKETPLACE_ROOT"] = "https://zmorph3d.com/"
+        tc.variables["CURA_DIGITAL_FACTORY_URL"] = "https://zmorph3d.com/"
 
 
         tc.generate()
