@@ -7,9 +7,9 @@ GetFromEnvironmentOrCache(
         DEFAULT
             5.0
         DESCRIPTION
-            "The name of the tag or branch to build for divid-binary-data")
+            "The name of the tag or branch to build for cura-binary-data")
 
-ExternalProject_Add(divid-binary-data
+ExternalProject_Add(cura-binary-data
         GIT_REPOSITORY https://github.com/soniq-divid/divid-binary-data
         GIT_TAG ${CURABINARYDATA_BRANCH_OR_TAG}
         GIT_SHALLOW 1
@@ -19,4 +19,4 @@ ExternalProject_Add(divid-binary-data
                    -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
                    -DCMAKE_PREFIX_PATH=${CMAKE_INSTALL_PREFIX}
                    -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE})
-add_dependencies(divid-binary-data Divid Uranium)
+add_dependencies(cura-binary-data Cura Uranium)

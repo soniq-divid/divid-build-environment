@@ -50,7 +50,7 @@ GetFromEnvironmentOrCache(
         DESCRIPTION
             "Build type of Divid, eg. 'Enterprise'")
 
-ExternalProject_Add(Divid
+ExternalProject_Add(Cura
     GIT_REPOSITORY https://github.com/soniq-divid/Divid
     GIT_TAG ${CURA_BRANCH_OR_TAG}
     GIT_SHALLOW 1
@@ -72,4 +72,4 @@ ExternalProject_Add(Divid
                -DCURA_DIGITAL_FACTORY_URL=${CURA_DIGITAL_FACTORY_URL}
                -DCURA_MARKETPLACE_ROOT=${CURA_MARKETPLACE_ROOT}
                -DCURA_NO_INSTALL_PLUGINS=${CURA_NO_INSTALL_PLUGINS})
-add_dependencies(Divid install-python-requirements Arcus Savitar Uranium DividEngine pynest2d Charon)
+add_dependencies(Cura install-python-requirements Arcus Savitar Uranium CuraEngine pynest2d Charon)

@@ -7,16 +7,16 @@ GetFromEnvironmentOrCache(
         DEFAULT
             5.0
         DESCRIPTION
-            "The name of the tag or branch to build for DividEngine")
+            "The name of the tag or branch to build for CuraEngine")
 GetFromEnvironmentOrCache(
         NAME
             CURA_ENGINE_VERSION
         DEFAULT
             ${CURA_VERSION}
         DESCRIPTION
-            "The version of DividEngine")
+            "The version of CuraEngine")
 
-ExternalProject_Add(DividEngine
+ExternalProject_Add(CuraEngine
         GIT_REPOSITORY https://github.com/soniq-divid/DividEngine
         GIT_TAG ${CURAENGINE_BRANCH_OR_TAG}
         GIT_SHALLOW 1
@@ -27,4 +27,4 @@ ExternalProject_Add(DividEngine
                    -DCMAKE_PREFIX_PATH=${CMAKE_INSTALL_PREFIX}
                    -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
                    -DCURA_ENGINE_VERSION=${CURA_ENGINE_VERSION})
-add_dependencies(DividEngine Arcus)
+add_dependencies(CuraEngine Arcus)

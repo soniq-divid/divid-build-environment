@@ -3,7 +3,7 @@
 
 set(pyinstaller_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/${exe_path}/pyinstaller)
 set(cura_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/bin/cura_app.py)
-set(dividengine_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/bin/CuraEngine${exe_ext})
+set(curaengine_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/bin/CuraEngine${exe_ext})
 set(installer_DIR "${CMAKE_INSTALL_PREFIX}/installer")
 set(ULTIMAKER_CURA_PATH "${installer_DIR}/dist/Zmorph-Divid" CACHE INTERNAL "ultimaker_cura_path")
 set(extra_pyinstaller_args )
@@ -67,7 +67,7 @@ add_custom_command(
                 --collect-all sqlite3
                 --hidden-import zeroconf
                 --collect-all trimesh
-                --add-binary "${dividengine_EXECUTABLE}${env_path_sep}."
+                --add-binary "${curaengine_EXECUTABLE}${env_path_sep}."
                 --add-data "${CMAKE_INSTALL_PREFIX}/${lib_path}/cura/plugins${env_path_sep}share/cura/plugins"
                 --add-data "${CMAKE_INSTALL_PREFIX}/${lib_path}/uranium/plugins${env_path_sep}share/uranium/plugins"
                 --add-data "${CMAKE_INSTALL_PREFIX}/share/cura/resources${env_path_sep}share/cura/resources"
