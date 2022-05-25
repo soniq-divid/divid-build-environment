@@ -55,7 +55,7 @@ add_custom_command(
             ${installer_DIR}
         COMMAND
             ${CMAKE_COMMAND} -E env "PYTHONPATH=${PYTHONPATH}" ${pyinstaller_EXECUTABLE} ${cura_EXECUTABLE}
-                --collect-all Divid
+                --collect-all Cura
                 --collect-all UM
                 --collect-all serial #Used only in plug-ins.
                 --collect-all Charon

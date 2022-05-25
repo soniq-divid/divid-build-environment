@@ -27,31 +27,31 @@ GetFromEnvironmentOrCache(
         DEFAULT
             "5"
         DESCRIPTION
-            "Cura Major Version")
+            "Divid Major Version")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_MINOR
         DEFAULT
             "0"
         DESCRIPTION
-            "Cura Minor Version")
+            "Divid Minor Version")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_PATCH
         DEFAULT
             "0"
         DESCRIPTION
-            "Cura Patch Version")
+            "Divid Patch Version")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_PRE_RELEASE_TAG
         DESCRIPTION
-            "Cura pre release tag Version Information a, b or rc")
+            "Divid pre release tag Version Information a, b or rc")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_BUILD
         DESCRIPTION
-            "Cura Version buildmetadata ignored when determining version precedence. Only used to identify a build.")
+            "Divid Version buildmetadata ignored when determining version precedence. Only used to identify a build.")
 set(CURA_VERSION_EXTRA )
 if(NOT ${CURA_VERSION_PRE_RELEASE_TAG} STREQUAL "")
     set(CURA_VERSION_EXTRA "-${CURA_VERSION_PRE_RELEASE_TAG}+${CURA_VERSION_BUILD}")
@@ -63,7 +63,7 @@ GetFromEnvironmentOrCache(
         DEFAULT
             ${_default_cura_version}
         DESCRIPTION
-            "Cura Extra Version Information"
+            "Divid Extra Version Information"
         REQUIRED)
 
 include(projects/python.cmake)
