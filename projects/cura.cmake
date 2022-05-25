@@ -2,7 +2,7 @@ GetFromEnvironmentOrCache(
         NAME
             CURA_BRANCH_OR_TAG
         DEFAULT
-            5.0
+            master
         DESCRIPTION
             "The name of the tag or branch to build for Divid")
 
@@ -51,7 +51,7 @@ GetFromEnvironmentOrCache(
             "Build type of Divid, eg. 'Enterprise'")
 
 ExternalProject_Add(Cura
-    GIT_REPOSITORY https://github.com/soniq-divid/Divid
+    GIT_REPOSITORY https://github.com/sqsoft-devops/cura-build-environment
     GIT_TAG ${CURA_BRANCH_OR_TAG}
     GIT_SHALLOW 1
     STEP_TARGETS update
