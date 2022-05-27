@@ -78,4 +78,4 @@ add_custom_command(
         COMMAND
             ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/packaging/Cura.ico ${ULTIMAKER_CURA_PATH}/
 )
-add_dependencies(pyinstaller create_installer_dir Divid fdm_materials divid-binary-data)
+add_dependencies(pyinstaller create_installer_dir Cura fdm_materials cura-binary-data)
