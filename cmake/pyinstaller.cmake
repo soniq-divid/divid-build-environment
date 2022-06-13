@@ -5,7 +5,7 @@ set(pyinstaller_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/${exe_path}/pyinstaller)
 set(cura_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/bin/cura_app.py)
 set(curaengine_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/bin/CuraEngine${exe_ext})
 set(installer_DIR "${CMAKE_INSTALL_PREFIX}/installer")
-set(ULTIMAKER_CURA_PATH "${installer_DIR}/dist/Zmorph-Divid" CACHE INTERNAL "ultimaker_cura_path")
+set(ULTIMAKER_CURA_PATH "${installer_DIR}/dist/Ultimaker-Cura" CACHE INTERNAL "ultimaker_cura_path")
 set(extra_pyinstaller_args )
 
 if (APPLE)
@@ -74,7 +74,7 @@ add_custom_command(
                 --add-data "${CMAKE_INSTALL_PREFIX}/share/uranium/resources${env_path_sep}share/uranium/resources"
                 --add-data "${Python_SITELIB_LOCAL}/UM/Qt/qml/UM/${env_path_sep}PyQt6/Qt6/qml/UM"
                 --windowed --clean --noconfirm --log-level INFO ${extra_pyinstaller_args}
-                --name "Zmorph-Divid"
+                --name "Ultimaker-Cura"
         COMMAND
             ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/packaging/Cura.ico ${ULTIMAKER_CURA_PATH}/
 )

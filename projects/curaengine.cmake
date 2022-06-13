@@ -5,7 +5,7 @@ GetFromEnvironmentOrCache(
         NAME
             CURAENGINE_BRANCH_OR_TAG
         DEFAULT
-            5.0
+            master
         DESCRIPTION
             "The name of the tag or branch to build for CuraEngine")
 GetFromEnvironmentOrCache(
@@ -17,7 +17,7 @@ GetFromEnvironmentOrCache(
             "The version of CuraEngine")
 
 ExternalProject_Add(CuraEngine
-        GIT_REPOSITORY https://github.com/soniq-divid/DividEngine
+        GIT_REPOSITORY https://github.com/ultimaker/CuraEngine
         GIT_TAG ${CURAENGINE_BRANCH_OR_TAG}
         GIT_SHALLOW 1
         STEP_TARGETS update

@@ -5,12 +5,12 @@ GetFromEnvironmentOrCache(
         NAME
             FDMMATERIALS_BRANCH_OR_TAG
         DEFAULT
-            5.0
+            master
         DESCRIPTION
             "The name of the tag or branch to build for fdm_materials")
 
 ExternalProject_Add(fdm_materials
-        GIT_REPOSITORY https://github.com/soniq-divid/fdm_materials
+        GIT_REPOSITORY https://github.com/ultimaker/fdm_materials
         GIT_TAG ${FDMMATERIALS_BRANCH_OR_TAG}
         GIT_SHALLOW 1
         STEP_TARGETS update

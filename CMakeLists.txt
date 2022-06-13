@@ -11,7 +11,7 @@ GetFromEnvironmentOrCache(
         DESCRIPTION
             "Specify the minimum version of the target platform (e.g. macOS or iOS)")
 
-project(divid-build-environment)
+project(cura-build-environment)
 cmake_minimum_required(VERSION 3.20)
 
 include(cmake/conan.cmake)
@@ -27,31 +27,31 @@ GetFromEnvironmentOrCache(
         DEFAULT
             "5"
         DESCRIPTION
-            "Divid Major Version")
+            "Cura Major Version")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_MINOR
         DEFAULT
             "0"
         DESCRIPTION
-            "Divid Minor Version")
+            "Cura Minor Version")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_PATCH
         DEFAULT
             "0"
         DESCRIPTION
-            "Divid Patch Version")
+            "Cura Patch Version")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_PRE_RELEASE_TAG
         DESCRIPTION
-            "Divid pre release tag Version Information a, b or rc")
+            "Cura pre release tag Version Information a, b or rc")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_BUILD
         DESCRIPTION
-            "Divid Version buildmetadata ignored when determining version precedence. Only used to identify a build.")
+            "Cura Version buildmetadata ignored when determining version precedence. Only used to identify a build.")
 set(CURA_VERSION_EXTRA )
 if(NOT ${CURA_VERSION_PRE_RELEASE_TAG} STREQUAL "")
     set(CURA_VERSION_EXTRA "-${CURA_VERSION_PRE_RELEASE_TAG}+${CURA_VERSION_BUILD}")
@@ -63,7 +63,7 @@ GetFromEnvironmentOrCache(
         DEFAULT
             ${_default_cura_version}
         DESCRIPTION
-            "Divid Extra Version Information"
+            "Cura Extra Version Information"
         REQUIRED)
 
 include(projects/python.cmake)

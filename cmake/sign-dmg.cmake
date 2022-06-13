@@ -22,5 +22,5 @@ if(SIGN_DMG)
                 --timestamp
                 -i "${ULTIMAKER_CURA_DOMAIN}"
                 "${DMG_PATH}")
-    add_dependencies(signing packaging pyinstaller install-python-requirements Divid create_installer_dir)
+    add_dependencies(signing packaging pyinstaller install-python-requirements Cura create_installer_dir)
 endif()

@@ -46,6 +46,6 @@ if(SIGN_DMG)
                     --username "${NOTARIZE_USER}"
                     --password "${NOTARIZE_PASSWORD}"
                     --file "${DMG_PATH}")
-        add_dependencies(notarize signing pyinstaller install-python-requirements Divid create_installer_dir)
+        add_dependencies(notarize signing pyinstaller install-python-requirements Cura create_installer_dir)
     endif()
 endif()
