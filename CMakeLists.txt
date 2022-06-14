@@ -70,7 +70,7 @@ GetFromEnvironmentOrCache(
         NAME
             ARCUS_BRANCH_OR_TAG
         DEFAULT
-            "5.0"
+            5.0
         DESCRIPTION
             "Arcus branch")
 
