@@ -51,7 +51,7 @@ GetFromEnvironmentOrCache(
             "Build type of Cura, eg. 'Enterprise'")
 
 ExternalProject_Add(Cura
-    GIT_REPOSITORY https://github.com/soniq-divid/Cura
+    GIT_REPOSITORY https://github.com/soniq-divid/divid
     GIT_TAG ${CURA_BRANCH_OR_TAG}
     GIT_SHALLOW 1
     STEP_TARGETS update
