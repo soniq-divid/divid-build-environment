@@ -5,7 +5,7 @@ GetFromEnvironmentOrCache(
         NAME
             FDMMATERIALS_BRANCH_OR_TAG
         DEFAULT
-            master
+            5.0
         DESCRIPTION
             "The name of the tag or branch to build for fdm_materials")
 
