@@ -52,11 +52,11 @@ GetFromEnvironmentOrCache(
             CURA_VERSION_BUILD
         DESCRIPTION
             "Cura Version buildmetadata ignored when determining version precedence. Only used to identify a build.")
-set(CURA_VERSION_EXTRA )
+#set(CURA_VERSION_EXTRA )
 #if(NOT ${CURA_VERSION_PRE_RELEASE_TAG} STREQUAL "")
 #    set(CURA_VERSION_EXTRA "-${CURA_VERSION_PRE_RELEASE_TAG}+${CURA_VERSION_BUILD}")
 #endif()
-set(_default_cura_version "${CURA_VERSION_MAJOR}.${CURA_VERSION_MINOR}.${CURA_VERSION_PATCH}${CURA_VERSION_EXTRA}")
+set(_default_cura_version "${CURA_VERSION_MAJOR}.${CURA_VERSION_MINOR}.${CURA_VERSION_PATCH}")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION
