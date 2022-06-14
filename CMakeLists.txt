@@ -66,7 +66,14 @@ GetFromEnvironmentOrCache(
             "Cura Extra Version Information"
         REQUIRED)
 # set branches to projects
-set (ARCUS_BRANCH_OR_TAG "5.0")
+GetFromEnvironmentOrCache(
+        NAME
+            ARCUS_BRANCH_OR_TAG
+        DEFAULT
+            "5.0"
+        DESCRIPTION
+            "Arcus branch")
+
 include(projects/python.cmake)
 include(projects/charon.cmake)
 include(projects/savitar.cmake)
