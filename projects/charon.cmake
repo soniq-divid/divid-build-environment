@@ -5,7 +5,7 @@ GetFromEnvironmentOrCache(
         NAME
             CHARON_BRANCH_OR_TAG
         DEFAULT
-            5.0
+            master
         DESCRIPTION
             "The name of the tag or branch to build for libCharon")
 

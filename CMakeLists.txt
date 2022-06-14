@@ -66,8 +66,17 @@ GetFromEnvironmentOrCache(
             "Cura Extra Version Information"
         REQUIRED)
 
-# set branches
+# set branches on projects
 set(ARCUS_BRANCH_OR_TAG "5.0")
+set(CHARON_BRANCH_OR_TAG "5.0")
+set(CURABINARYDATA_BRANCH_OR_TAG "5.0")
+set(CURA_BRANCH_OR_TAG "5.0")
+set(CURAENGINE_BRANCH_OR_TAG "5.0")
+set(FDMMATERIALS_BRANCH_OR_TAG "5.0")
+set(LIBNEST2D_BRANCH_OR_TAG "5.0")
+set(PYNEST2D_BRANCH_OR_TAG "5.0")
+set(SAVITAR_BRANCH_OR_TAG "5.0")
+set(URANIUM_BRANCH_OR_TAG "5.0")
 
 include(projects/python.cmake)
 include(projects/charon.cmake)
