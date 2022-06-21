@@ -52,11 +52,11 @@ GetFromEnvironmentOrCache(
             CURA_VERSION_BUILD
         DESCRIPTION
             "Cura Version buildmetadata ignored when determining version precedence. Only used to identify a build.")
-#set(CURA_VERSION_EXTRA )
-#if(NOT ${CURA_VERSION_PRE_RELEASE_TAG} STREQUAL "")
-#    set(CURA_VERSION_EXTRA "-${CURA_VERSION_PRE_RELEASE_TAG}+${CURA_VERSION_BUILD}")
-#endif()
-set(_default_cura_version "${CURA_VERSION_MAJOR}.${CURA_VERSION_MINOR}.${CURA_VERSION_PATCH}")
+set(CURA_VERSION_EXTRA )
+if(NOT ${CURA_VERSION_PRE_RELEASE_TAG} STREQUAL "")
+    set(CURA_VERSION_EXTRA "-${CURA_VERSION_PRE_RELEASE_TAG}+${CURA_VERSION_BUILD}")
+endif()
+set(_default_cura_version "${CURA_VERSION_MAJOR}.${CURA_VERSION_MINOR}.${CURA_VERSION_PATCH}${CURA_VERSION_EXTRA}")
 GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION
@@ -65,7 +65,6 @@ GetFromEnvironmentOrCache(
         DESCRIPTION
             "Cura Extra Version Information"
         REQUIRED)
-
 # set branches on projects
 set(ARCUS_BRANCH_OR_TAG "5.0")
 set(CHARON_BRANCH_OR_TAG "5.0")
@@ -78,17 +77,10 @@ set(PYNEST2D_BRANCH_OR_TAG "5.0")
 set(SAVITAR_BRANCH_OR_TAG "5.0")
 set(URANIUM_BRANCH_OR_TAG "5.0")
 
-include(projects/python.cmake)
-include(projects/charon.cmake)
-include(projects/savitar.cmake)
-include(projects/arcus.cmake)
-include(projects/uranium.cmake)
-include(projects/libnest2d.cmake)
-include(projects/pynest2d.cmake)
-include(projects/curaengine.cmake)
-include(projects/cura.cmake)
-include(projects/fdm_materials.cmake)
-include(projects/cura-binary-data.cmake)
+file(GLOB _projects projects/*.cmake)
+foreach(_project ${_projects})
+    include(${_project})
+endforeach()
 
 # Collect the artifacts with pyinstaller
 include(cmake/pyinstaller.cmake)
@@ -101,7 +93,6 @@ endif()
 
 if(LINUX)
     include(cmake/create-appimage.cmake)
-    include(cmake/sign-appimage.cmake)
 endif()
 
 if(WIN32)
