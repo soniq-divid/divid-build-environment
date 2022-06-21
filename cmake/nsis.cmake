@@ -16,7 +16,7 @@ add_custom_command(
             ${installer_DIR}/dist
         COMMAND
             ${Python_EXECUTABLE} ${CMAKE_SOURCE_DIR}/packaging/NSIS/nsis-configurator.py
-            ${ULTIMAKER_CURA_PATH}
+            #${ULTIMAKER_CURA_PATH}
             ${CMAKE_SOURCE_DIR}/packaging/NSIS/Ultimaker-Cura.nsi.jinja
             "Zmorph-Divid"
             "Zmorph-Divid.exe"
