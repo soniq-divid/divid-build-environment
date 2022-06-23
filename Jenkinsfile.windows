@@ -12,7 +12,7 @@ pipeline {
 
             when { expression { old_files_installation == 'true' } }
             steps {
-                bat 'powershell "rm -r -fo ./output"'
+//                bat 'powershell "rm -r -fo ./output"'
             }
         }
 
@@ -20,14 +20,14 @@ pipeline {
 
             when { expression { old_files_build == 'true' } }
             steps {
-                bat 'powershell "rm -r -fo ./build"'
+//                bat 'powershell "rm -r -fo ./build"'
             }
         }
 
         stage ('Run build') {
             steps {
                 withCredentials([file(credentialsId: 'certificate_windows', variable: 'CERTIFICATE_WINDOWS')]) {
-
+/*
                     bat """
                         powershell "Copy-Item %CERTIFICATE_WINDOWS% -Destination ./docker/certificate.pfx"
                         mkdir output
@@ -42,11 +42,11 @@ pipeline {
                         cmake -G "NMake Makefiles" -DCMAKE_PREFIX_PATH="../output" -DCMAKE_INSTALL_PREFIX="../output" -DCMAKE_BUILD_TYPE=Release ..
                         cmake --build .
                     """
-                    }
-
+ powershell "Remove-Item ./docker/certificate.pfx"                   }
+*/
                     bat """
-                    powershell "Remove-Item ./docker/certificate.pfx"
-                    mv output/installer/dist/Zmorph-Divid* windows-installers/
+                    
+                    cp output/installer/dist/Zmorph-Divid* windows-installers/
                     """
                 }
             }
