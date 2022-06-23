@@ -46,7 +46,7 @@ pipeline {
 */
                     bat """
                     
-                    powershell mv output/installer/dist/Zmorph-Divid* windows-installers/
+                    powershell mv output/installer/dist/Zmorph-Divid-* windows-installers/
                     """
                 }
             }
@@ -56,7 +56,7 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: 'certificate_windows', variable: 'CERTIFICATE_WINDOWS')]) {
 
-                    bat 'powershell "signtool sign  /fd SHA256 /a /f %CERTIFICATE_WINDOWS% ./windows-installers/Zmorph-Divid*"'
+                    bat 'powershell "signtool sign  /fd SHA256 /a /f %CERTIFICATE_WINDOWS% ./windows-installers/Zmorph-Divid-*"'
 
                     bat 'powershell "./signing/windows_installer_exe_signing.ps1"'
                 }
