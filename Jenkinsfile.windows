@@ -31,13 +31,15 @@ pipeline {
 
                     bat 'powershell "Copy-Item %CERTIFICATE_WINDOWS% -Destination ./docker/certificate.pfx"'
 
-                    bat 'powershell "mkdir output"'
-                    bat 'powershell "mkdir build"'
-                    bat 'powershell "cd build"'
-                    bat 'cmd /k "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsx86_amd64.bat"'
-                    bat 'chcp 65001'
-                    bat 'cmake -G "NMake Makefiles" -DCMAKE_PREFIX_PATH="../output" -DCMAKE_INSTALL_PREFIX="../output" -DCMAKE_BUILD_TYPE=Release ..'
-                    bat 'cmake --build .'
+                    bat """
+                        mkdir output
+                        mkdir build
+                        cd build
+                    """
+                    //bat 'cmd /k "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsx86_amd64.bat"'
+                    //bat 'chcp 65001'
+                    //bat 'cmake -G "NMake Makefiles" -DCMAKE_PREFIX_PATH="../output" -DCMAKE_INSTALL_PREFIX="../output" -DCMAKE_BUILD_TYPE=Release ..'
+                    //bat 'cmake --build .'
                     //bat 'powershell "./windows_build.ps1"'
 
                     bat 'powershell "Remove-Item ./docker/certificate.pfx"'
