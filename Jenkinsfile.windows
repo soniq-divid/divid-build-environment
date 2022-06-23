@@ -31,9 +31,9 @@ pipeline {
 
                     bat 'powershell "Copy-Item %CERTIFICATE_WINDOWS% -Destination ./docker/certificate.pfx"'
 
-                    bat 'mkdir output'
-                    bat 'mkdir build'
-                    bat 'cd build '
+                    bat 'powershell "mkdir output"'
+                    bat 'powershell "mkdir build"'
+                    bat 'powershell "cd build"'
                     bat 'cmd /k "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsx86_amd64.bat"'
                     bat 'chcp 65001'
                     bat 'cmake -G "NMake Makefiles" -DCMAKE_PREFIX_PATH="../output" -DCMAKE_INSTALL_PREFIX="../output" -DCMAKE_BUILD_TYPE=Release ..'
