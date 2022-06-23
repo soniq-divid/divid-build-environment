@@ -46,7 +46,7 @@ pipeline {
 */
                     bat """
                     
-                    cp output/installer/dist/Zmorph-Divid* windows-installers/
+                    powershell mv output/installer/dist/Zmorph-Divid* windows-installers/
                     """
                 }
             }
