@@ -4,7 +4,6 @@ pipeline {
     environment{
         old_files_installation = fileExists './output'
         old_files_build = fileExists './build'
-        //old_containers = sh (script: 'docker ps -a -f name=cura-build-environment | wc -l', , returnStdout:true).trim()
     }
 
     stages {
@@ -29,11 +28,11 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: 'certificate_windows', variable: 'CERTIFICATE_WINDOWS')]) {
 
-                    bat 'powershell "Copy-Item %CERTIFICATE_WINDOWS% -Destination ./docker/certificate.pfx"'
-
                     bat """
+                        powershell "Copy-Item %CERTIFICATE_WINDOWS% -Destination ./docker/certificate.pfx"
                         mkdir output
                         mkdir build
+                        mkdir windows-installers
                     """
                     dir('build') {
                         bat """
@@ -44,13 +43,11 @@ pipeline {
                         cmake --build .
                     """
                     }
-                    //bat 'cmd /k "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build/vcvarsx86_amd64.bat"'
-                    //bat 'chcp 65001'
-                    //bat 'cmake -G "NMake Makefiles" -DCMAKE_PREFIX_PATH="../output" -DCMAKE_INSTALL_PREFIX="../output" -DCMAKE_BUILD_TYPE=Release ..'
-                    //bat 'cmake --build .'
-                    //bat 'powershell "./windows_build.ps1"'
 
-                    bat 'powershell "Remove-Item ./docker/certificate.pfx"'
+                    bat """
+                    powershell "Remove-Item ./docker/certificate.pfx"
+                    mv output/installer/dist/Zmorph-Divid* windows-installers/
+                    """
                 }
             }
         }
@@ -59,7 +56,7 @@ pipeline {
             steps {
                 withCredentials([file(credentialsId: 'certificate_windows', variable: 'CERTIFICATE_WINDOWS')]) {
 
-                    bat 'powershell "signtool sign  /fd SHA256 /a /f %CERTIFICATE_WINDOWS% ./windows-installers/output/Zmorph_Divid*"'
+                    bat 'powershell "signtool sign  /fd SHA256 /a /f %CERTIFICATE_WINDOWS% ./windows-installers/Zmorph-Divid*"'
 
                     bat 'powershell "./signing/windows_installer_exe_signing.ps1"'
                 }
@@ -70,7 +67,7 @@ pipeline {
     
     post {
         always {
-            archiveArtifacts artifacts: 'windows-installers/output/', fingerprint: true
+            archiveArtifacts artifacts: 'windows-installers/', fingerprint: true
         }
     }
 
