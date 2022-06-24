@@ -4,6 +4,7 @@ pipeline {
     environment{
         old_files_installation = fileExists './output'
         old_files_build = fileExists './build'
+        old_files_installers = fileExists './windows-installers'
     }
 
     stages {
@@ -21,6 +22,14 @@ pipeline {
             when { expression { old_files_build == 'true' } }
             steps {
                 bat 'powershell "rm -r -fo ./build"'
+            }
+        }
+        
+        stage ('Clean environment files old_files_installers') {            
+
+            when { expression { old_files_installers == 'true' } }
+            steps {
+                bat 'powershell "rm -r -fo ./windows-installers"'
             }
         }
 
