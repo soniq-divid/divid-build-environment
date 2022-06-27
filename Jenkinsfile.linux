@@ -47,7 +47,7 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'installer/installer/dist/Zmorph-Divid-*.AppImage', fingerprint: true
-            archiveArtifacts artifacts: 'installer/installer/dist/Zmorph-Divid-*.sha256sum', fingerprint: true
+            archiveArtifacts artifacts: 'installer/installer/dist/Zmorph-Divid-*.sha1', fingerprint: true
             archiveArtifacts artifacts: 'installer/installer/dist/Zmorph-Divid-*.asc', fingerprint: true
         }
     }
