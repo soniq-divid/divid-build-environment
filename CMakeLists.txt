@@ -25,7 +25,7 @@ GetFromEnvironmentOrCache(
         NAME
             CURA_VERSION_MAJOR
         DEFAULT
-            "2"
+            "0"
         DESCRIPTION
             "Cura Major Version")
 GetFromEnvironmentOrCache(
