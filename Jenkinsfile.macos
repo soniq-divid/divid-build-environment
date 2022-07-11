@@ -26,7 +26,7 @@ pipeline {
 
         stage ('Run build') {
             environment {
-                DNOTARIZE_USER = credentials('DNOTARIZE_USER')
+                //DNOTARIZE_USER = credentials('DNOTARIZE_USER')
                 DNOTARIZE_PASSWORD = credentials('DNOTARIZE_PASSWORD')
             }
             steps {
