@@ -31,7 +31,6 @@ pipeline {
             }
             steps {
                 sh """
-                sudo which cmake
                 sudo mkdir installer
                 sudo mkdir build
                 cd build
