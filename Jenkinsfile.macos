@@ -30,14 +30,7 @@ pipeline {
                 DNOTARIZE_PASSWORD = credentials('DNOTARIZE_PASSWORD')
             }
             steps {
-                sh """
-                sudo mkdir installer
-                sudo mkdir build
-                cd build
-                pwd
-                sudo cmake -DCMAKE_PREFIX_PATH=../installer -DCMAKE_INSTALL_PREFIX=../installer -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_DEPLOYMENT_TARGET=10.15.7 -DNOTARIZE_USER=jenkins -DNOTARIZE_PASSWORD=$DNOTARIZE_PASSWORD -DCODESIGN_IDENTITY=SoniqSoft ..
-                sudo cmake --build .
-                """
+                sh 'sudo bash ./macos_build.sh'
             }
         }
 
