@@ -35,7 +35,7 @@ pipeline {
                 sudo mkdir build
                 cd build
                 pwd
-                sudo cmake -DCMAKE_PREFIX_PATH=../installer -DCMAKE_INSTALL_PREFIX=../installer -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_DEPLOYMENT_TARGET=12.2 -DNOTARIZE_USER=jenkins -DNOTARIZE_PASSWORD=$DNOTARIZE_PASSWORD -DCODESIGN_IDENTITY=soniq ..
+                sudo cmake -DCMAKE_PREFIX_PATH=../installer -DCMAKE_INSTALL_PREFIX=../installer -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_DEPLOYMENT_TARGET=12.2 -DNOTARIZE_USER=jenkins -DNOTARIZE_PASSWORD=$DNOTARIZE_PASSWORD -DCODESIGN_IDENTITY=soniq -DCURA_VERSION_BUILD=a9 ..
                 sudo cmake --build .
                 """
             }
