@@ -14,7 +14,7 @@ if (APPLE)
             NAME
                 SIGN_DMG
             DEFAULT
-                TRUE
+                FALSE
             BOOL
             DESCRIPTION
                 "Sign the dmg")
