@@ -63,6 +63,7 @@ add_custom_command(
                 --hidden-import pyArcus
                 --hidden-import pynest2d
                 --hidden-import PyQt6.QtNetwork
+                --hidden-import PyQt6.3D
                 --hidden-import logging.handlers
                 --collect-all sqlite3
                 --hidden-import zeroconf
