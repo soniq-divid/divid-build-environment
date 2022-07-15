@@ -74,7 +74,7 @@ add_custom_command(
                 --add-data "${CMAKE_INSTALL_PREFIX}/share/cura/resources${env_path_sep}share/cura/resources"
                 --add-data "${CMAKE_INSTALL_PREFIX}/share/uranium/resources${env_path_sep}share/uranium/resources"
                 --add-data "${Python_SITELIB_LOCAL}/UM/Qt/qml/UM/${env_path_sep}PyQt6/Qt6/qml/UM"
-                --add-data "${Python_SITELIB_LOCAL}/PyQt6/Qt6/lib/"
+                --add-data "${Python_SITELIB_LOCAL}/PyQt6/Qt6/lib"
                 --windowed --clean --noconfirm --log-level INFO ${extra_pyinstaller_args}
                 --name "Zmorph-Divid"
         COMMAND
